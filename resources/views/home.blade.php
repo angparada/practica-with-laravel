@@ -14,7 +14,15 @@
                         </div>
                     @endif
 
-                    {{ __('You are logged in!') }}
+                    My entries
+
+                    <ul class="list-group">
+                        @foreach ($entries as $entry)
+                            <li class="list-group-item">
+                                <a href="{{ url('entries/'.$entry->id) }}">{{ $entry->title }}</a>
+                            </li>
+                        @endforeach
+                    </ul>
                 </div>
             </div>
         </div>
